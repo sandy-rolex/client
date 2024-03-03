@@ -3,12 +3,32 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ConfigProvider } from "antd";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  /*<React.StrictMode>*/
+  
+    <ConfigProvider
+     theme={{
+      components: {
+        Button: {
+          colorPrimary: '#049a8f',
+          colorPrimaryHover: '#037971',
+          borderRadius: '2px',
+          boxShadow: "none",
+        }
+      },
+      token: {
+        borderRadius: "2px",
+        colorPrimary: "#049a8f",
+
+      },
+    }}>
+      <App />
+    </ConfigProvider>
+    
 );
 
 // If you want to start measuring performance in your app, pass a function
